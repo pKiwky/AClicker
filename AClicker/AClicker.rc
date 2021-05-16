@@ -10,6 +10,8 @@
 //
 #include "winres.h"
 
+IDI_ICON1               ICON    "Assets/AClickerIcon.ico"
+
 /////////////////////////////////////////////////////////////////////////////
 #undef APSTUDIO_READONLY_SYMBOLS
 

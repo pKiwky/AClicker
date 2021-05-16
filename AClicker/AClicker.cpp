@@ -1,6 +1,6 @@
 #include "AClicker.h"
 
-#define ACLICKER_VERSION "1.0.0"
+#define ACLICKER_VERSION "1.1"
 
 #if _DEBUG
 #define ACLICKER_BUILD "Debug"
