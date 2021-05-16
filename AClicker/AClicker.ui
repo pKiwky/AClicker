@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AClicker</class>
+ <widget class="QMainWindow" name="AClicker">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>371</width>
+    <height>193</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>AClicker</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QGroupBox" name="groupBoxClickDelay">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>5</y>
+      <width>361</width>
+      <height>56</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Click delay</string>
+    </property>
+    <widget class="QLineEdit" name="lineEditMinutes">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>25</y>
+       <width>50</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelMinutes">
+     <property name="geometry">
+      <rect>
+       <x>65</x>
+       <y>25</y>
+       <width>49</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>minutes</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEditSeconds">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>25</y>
+       <width>50</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelSeconds">
+     <property name="geometry">
+      <rect>
+       <x>175</x>
+       <y>25</y>
+       <width>49</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>seconds</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelMilliseconds">
+     <property name="geometry">
+      <rect>
+       <x>285</x>
+       <y>25</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>milliseconds</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEditMilliseconds">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>25</y>
+       <width>50</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>65</y>
+      <width>361</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayoutSettings1">
+     <item>
+      <widget class="QGroupBox" name="groupBoxClickOptions">
+       <property name="title">
+        <string>Click options</string>
+       </property>
+       <widget class="QLabel" name="labelClickButton">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>25</y>
+          <width>49</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Button</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelClicks">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>50</y>
+          <width>49</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Clicks</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBoxClick">
+        <property name="geometry">
+         <rect>
+          <x>73</x>
+          <y>50</y>
+          <width>91</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBoxClickButton">
+        <property name="geometry">
+         <rect>
+          <x>73</x>
+          <y>25</y>
+          <width>91</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBoxClickRepeat">
+       <property name="title">
+        <string>Click repeat</string>
+       </property>
+       <widget class="QRadioButton" name="radioButtonRepeatTimes">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>25</y>
+          <width>89</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Repeat</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEditRepeatTimes">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>25</y>
+          <width>50</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelRepeatTimes">
+        <property name="geometry">
+         <rect>
+          <x>125</x>
+          <y>25</y>
+          <width>41</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>times</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="radioButtonRepeatInf">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>50</y>
+          <width>161</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Repeat until stopped</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>150</y>
+      <width>361</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayoutStartStop" stretch="0,0">
+     <property name="spacing">
+      <number>6</number>
+     </property>
+     <property name="sizeConstraint">
+      <enum>QLayout::SetNoConstraint</enum>
+     </property>
+     <item>
+      <widget class="QPushButton" name="pushButtonStart">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Start (Press ?)</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButtonStop">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Stop (Press ?)</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>lineEditMinutes</tabstop>
+  <tabstop>lineEditSeconds</tabstop>
+  <tabstop>lineEditMilliseconds</tabstop>
+ </tabstops>
+ <resources>
+  <include location="AClicker.qrc"/>
+ </resources>
+ <connections/>
+</ui>
