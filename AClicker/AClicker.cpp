@@ -1,6 +1,6 @@
 #include "AClicker.h"
 
-#define ACLICKER_VERSION "1.1"
+#define ACLICKER_VERSION "1.2"
 
 #if _DEBUG
 #define ACLICKER_BUILD "Debug"
@@ -17,8 +17,8 @@ AClicker::AClicker(QWidget *parent): QMainWindow(parent), ui(new Ui::AClicker), 
 	setWindowTitle("AClicker " + QString(ACLICKER_VERSION) + " " + QString(ACLICKER_BUILD));
 	setWindowFlags(Qt::MSWindowsFixedSizeDialogHint);
 
-	ui->pushButtonStart->setText(QString::asprintf("Start (Press %c)", g_Settings->m_keyToggle));
-	ui->pushButtonStop->setText(QString::asprintf("Stop (Press %c)", g_Settings->m_keyToggle));
+	ui->pushButtonStart->setText(QString::asprintf("Start (Press F7)"));
+	ui->pushButtonStop->setText(QString::asprintf("Stop (Press F7)"));
 	ui->pushButtonStop->setEnabled(false);
 
 	connect(ui->pushButtonStart, SIGNAL(pressed()), this, SLOT(OnStartButtonPressed()));
@@ -38,6 +38,9 @@ AClicker::AClicker(QWidget *parent): QMainWindow(parent), ui(new Ui::AClicker), 
 
 	ui->comboBoxClick->addItem("Single Click", 1);
 	ui->comboBoxClick->addItem("Double Click", 2);
+
+	ui->radioButtonRepeatInf->setChecked(true);
+	ui->lineEditMilliseconds->setText("100");
 }
 
 void AClicker::ToggleStartStop() {

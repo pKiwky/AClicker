@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>371</width>
-    <height>193</height>
+    <height>192</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -271,6 +271,11 @@
     </layout>
    </widget>
   </widget>
+  <action name="actionHotkeys">
+   <property name="text">
+    <string>Hotkeys</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
