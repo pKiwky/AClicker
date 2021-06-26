@@ -41,6 +41,12 @@ AClicker::AClicker(QWidget *parent): QMainWindow(parent), ui(new Ui::AClicker), 
 
 	ui->radioButtonRepeatInf->setChecked(true);
 	ui->lineEditMilliseconds->setText("100");
+
+	int min, sec, ms;
+	g_Settings->Load(min, sec, ms);
+	ui->lineEditMinutes->setText(QString::number(min));
+	ui->lineEditSeconds->setText(QString::number(sec));
+	ui->lineEditMilliseconds->setText(QString::number(ms));
 }
 
 void AClicker::ToggleStartStop() {
@@ -117,6 +123,8 @@ void AClicker::OnStartButtonPressed() {
 		m_clickerThread = new std::thread(&AClicker::StartClicker, this, interval, repetitions, clickButton, clicks);
 		m_clickerThread->detach();
 	}
+
+	g_Settings->Save(minutes, seconds, ms);
 }
 
 void AClicker::OnStopButtonPressed() {

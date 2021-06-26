@@ -10,5 +10,9 @@ public:
 	int m_totalClicks;
 	bool m_isRunning;
 
+public:
+	void Save(int min, int sec, int ms);
+	void Load(int &min, int &sec, int &ms);
+
 };
 
