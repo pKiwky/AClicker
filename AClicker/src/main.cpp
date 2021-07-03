@@ -1,4 +1,4 @@
-#include "AClicker.h"
+#include <AClicker.h>
 #include <QtWidgets/QApplication>
 
 int main(int argc, char *argv[]) {
@@ -6,7 +6,7 @@ int main(int argc, char *argv[]) {
 	AClicker w;
 
 	w.setWindowIcon(QIcon(":/Icon/Assets/AClickerIcon.ico"));
-
 	w.show();
+
 	return a.exec();
 }

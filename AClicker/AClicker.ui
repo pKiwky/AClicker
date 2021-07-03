@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>371</width>
-    <height>192</height>
+    <height>193</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -143,7 +143,7 @@
          <string>Clicks</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBoxClick">
+       <widget class="QComboBox" name="comboBoxClickType">
         <property name="geometry">
          <rect>
           <x>73</x>
@@ -232,7 +232,7 @@
       <height>36</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayoutStartStop" stretch="0,0">
+    <layout class="QHBoxLayout" name="horizontalLayoutStartStop" stretch="0,0,0">
      <property name="spacing">
       <number>6</number>
      </property>
@@ -268,6 +268,22 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QPushButton" name="pushButtonSettings">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Settings</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
   </widget>
@@ -276,12 +292,30 @@
     <string>Hotkeys</string>
    </property>
   </action>
+  <action name="actionStart">
+   <property name="text">
+    <string>Start</string>
+   </property>
+  </action>
+  <action name="actionStop">
+   <property name="text">
+    <string>Stop</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
   <tabstop>lineEditMinutes</tabstop>
   <tabstop>lineEditSeconds</tabstop>
   <tabstop>lineEditMilliseconds</tabstop>
+  <tabstop>comboBoxClickButton</tabstop>
+  <tabstop>comboBoxClickType</tabstop>
+  <tabstop>radioButtonRepeatTimes</tabstop>
+  <tabstop>lineEditRepeatTimes</tabstop>
+  <tabstop>radioButtonRepeatInf</tabstop>
+  <tabstop>pushButtonStart</tabstop>
+  <tabstop>pushButtonStop</tabstop>
+  <tabstop>pushButtonSettings</tabstop>
  </tabstops>
  <resources>
   <include location="AClicker.qrc"/>

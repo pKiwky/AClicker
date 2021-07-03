@@ -7,7 +7,7 @@
 #include <Windows.h>
 
 template <typename T>
-using KeyCallBack = void(T:: *)(uint8_t, bool);
+using KeyCallBack = void(T:: *)(int, bool);
 
 template <typename T>
 struct FunctionBinder {
@@ -23,22 +23,21 @@ public:
 	Binder();
 	~Binder();
 
-	void Bind(uint8_t key, KeyCallBack<T> callBack, T *className);
-	void Unbind(uint8_t key);
-	void KeyListener(std::map<uint8_t, FunctionBinder<T>> *keys);
+	void Bind(int key, KeyCallBack<T> callBack, T *className);
+	void Unbind(int key);
+	void KeyListener(std::map<int, FunctionBinder<T>> *keys);
 
 private:
 	std::thread *m_KeyThread;
-	std::map<uint8_t, FunctionBinder<T>> *m_KeyList;
+	std::map<int, FunctionBinder<T>> *m_KeyList;
 	bool isRunning;
 	std::mutex m_Mutex;
 
 };
 
-
 template<typename T>
 Binder<T>::Binder() {
-	m_KeyList = new std::map<uint8_t, FunctionBinder<T>>();
+	m_KeyList = new std::map<int, FunctionBinder<T>>();
 
 	isRunning = true;
 	m_KeyThread = new std::thread(&Binder::KeyListener, this, m_KeyList);
@@ -49,10 +48,11 @@ template<typename T>
 Binder<T>::~Binder() {
 	isRunning = false;
 	std::lock_guard<std::mutex> lock(m_Mutex);
+	//m_KeyThread->join();
 }
 
 template<typename T>
-void Binder<T>::Bind(uint8_t key, KeyCallBack<T> callBack, T *className) {
+void Binder<T>::Bind(int key, KeyCallBack<T> callBack, T *className) {
 	FunctionBinder<T> binderFunction;
 	binderFunction.callBack = callBack;
 	binderFunction.className = className;
@@ -62,7 +62,7 @@ void Binder<T>::Bind(uint8_t key, KeyCallBack<T> callBack, T *className) {
 }
 
 template <typename T>
-void Binder<T>::Unbind(uint8_t key) {
+void Binder<T>::Unbind(int key) {
 	std::lock_guard<std::mutex> lock(m_Mutex);
 	{
 		m_KeyList->erase(key);
@@ -70,14 +70,14 @@ void Binder<T>::Unbind(uint8_t key) {
 }
 
 template<typename T>
-void Binder<T>::KeyListener(std::map<uint8_t, FunctionBinder<T>> *keys) {
-	uint8_t anyKeyDown = 0;
+void Binder<T>::KeyListener(std::map<int, FunctionBinder<T>> *keys) {
+	int anyKeyDown = 0;
 
 	while(isRunning) {
 		std::lock_guard<std::mutex> lock(m_Mutex);
 		{
 			for(auto it = keys->begin(); it != keys->end(); it++) {
-				uint8_t key = it->first;
+				int key = it->first;
 
 				if(GetKeyState(key) < 0) {
 					anyKeyDown = key;
