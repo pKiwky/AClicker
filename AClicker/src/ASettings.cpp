@@ -29,8 +29,7 @@ ASettings::ASettings(QWidget *parent, AClicker *mainWindow): QWidget(parent), m_
 	m_Interface->lineEditStop->setText(QChar(g_Settings->m_KeyStop));
 }
 
-ASettings::~ASettings() {
-}
+ASettings::~ASettings() {}
 
 bool ASettings::eventFilter(QObject *obj, QEvent *event) {
 	QKeyEvent *key = static_cast<QKeyEvent *>(event);

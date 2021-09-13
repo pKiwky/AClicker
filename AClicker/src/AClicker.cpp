@@ -13,7 +13,7 @@ AClicker::AClicker(QWidget *parent): QMainWindow(parent), m_Interface(new Ui::AC
 	m_Interface->setupUi(this);
 	g_Settings = new Settings();
 
-	setWindowTitle("AClicker V1.3");
+	setWindowTitle("AClicker V1.4");
 	setWindowFlags(Qt::MSWindowsFixedSizeDialogHint);
 
 	connect(m_Interface->pushButtonStart, SIGNAL(pressed()), this, SLOT(OnStartPressed()));
@@ -64,7 +64,7 @@ void AClicker::OnStopPressed() {
 
 ASettings *windowSettings;
 void AClicker::OnSettingsPressed() {
-	if(windowSettings == nullptr) {
+	if(windowSettings == nullptr && g_Settings->m_IsRunning == false) {
 		AClicker::m_Locked = true;
 
 		windowSettings = new ASettings(nullptr, this);
